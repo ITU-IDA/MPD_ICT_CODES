@@ -31,7 +31,9 @@ The final Jupyter Notebook calculates SDG indicator 17.8.1, the proportion of in
 presented by age and gender.
 
 ## Contributors
-This project is done by the International Telecommunication Union (ITU). 
+This project is done by the Data and Analytics Division within the International Telecommunication Union (ITU). For any questions or comments, please contact indicators@itu.int. 
+
+## Folders
 
 ### Assets
 This folder contains all the assets used in the project such as images, etc.
