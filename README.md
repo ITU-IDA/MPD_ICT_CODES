@@ -2,7 +2,7 @@
 This project aims to estimate the proportion of the population using the internet by leveraging mobile positioning data (MPD). The project consists of several notebooks that process raw MPD, provide quality assurance of MPD, determine home locations of subscribers, and calculate the proportion of the population using the internet.
 
 ## Disclaimer
-The codes in the Github repo are under the copyright rules of the ITU. Please let us know before sharing the codes with other users or if there is any interest from other parties in using the codes.
+The codes in the Github repo are under the copyright rules of the ITU. Please contact us (indicators@itu.int) before sharing the codes with other users or if there is any interest from other parties in using the codes.
 
 ## Introduction 
 The Jupyter Notebook series are written in PySpark and serves as a practical guide for statisticians and data scientists on how to prepare and process mobile phone data (CDRs) to calculate one of the information society indicators (proportion of individuals using the Internet). 
