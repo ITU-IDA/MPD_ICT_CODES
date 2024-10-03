@@ -45,7 +45,7 @@ This folder contains all the data used in the project such as CSV, JSON, or Exce
 This folder contains all the Jupyter Notebooks used for processing raw MPD, Quality Assurance (QA), Anchoring, and Calculation of the SDGs Indicator.
 
 ### Script
-This folder contains all the Python scripts used to inside the notebooks.
+This folder contains all the Python scripts used to inside the notebooks. The most important is conf.py which includes configuration of parameters and the names of all files to be used in the notebooks. 
 
 ## Target Audience
 The target audience for this project includes the International Telecommunication Union (ITU) and National Statistics Offices who are interested in using MPD to estimate the proportion of the population using the internet.
