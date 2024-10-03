@@ -14,19 +14,13 @@ and notebook tutorial for installing the local version of spark:
 
 # List of Notebooks
 
-## 00-Generate Synthetic Data.ipynb (Optional)
+## Synthetic data - coming soon (Optional)
 
-This notebook generates synthetic data that mimics the structure and characteristics of Mobile Positioning Data (MPD). The generated data can be used for testing purposes. The notebook uses Python libraries such as `numpy` and `pandas` to generate the synthetic data.
+There are two notebooks which generates synthetic data that mimics the structure and characteristics of Mobile Positioning Data (MPD). The generated data can be used for testing purposes. The notebook uses Python libraries such as `numpy` and `pandas` to generate the synthetic data.
 - Input: -
 - Output: `MPD_sample_synthetic.csv`
 
-## 00-Generate Synthetic Data - Large.ipynb (Optional)
-
-This notebook is similar to `00-Generate Synthetic Data.ipynb` but can generate much larger datasets. It is designed for testing purposes where large amounts of data are required. The notebook uses the same Python libraries as `00-Generate Synthetic Data.ipynb`.
-- Input: -
-- Output: `MPD_sample_synthetic_LARGE.csv`
-
-## 00-Generate CRM Data.ipynb (Optional)
+## 00-Generate CRM Data.ipynb - coming soon (Optional)
 This notebook generates synthetic metadata to be used for indciator calculation, such as gender & age group.
 - Input: -
 - Output: `MPD_sample_synthetic_CRM.csv` & `MPD_sample_synthetic_zone.csv`
@@ -34,7 +28,11 @@ This notebook generates synthetic metadata to be used for indciator calculation,
 ## 00-Setup Local Environment (Optional).ipynb
 This notebook provides guideline for the instalation of PySpark on a Macbook/Linux.
 
-## 01-Processing Raw MPD.ipynb
+## 01a-Sanity Checks.ipynb
+
+This notebook checks the input file for inconsistencies. 
+
+## 01b-Processing Raw MPD.ipynb
 
 This notebook processes raw Mobile Positioning Data (MPD) by doing some data transformation, merging, and filtering according to some rules. The output of this notebook is a processed MPD dataset that can be used for further analysis.
 - Input: `MPD_sample_synthetic.csv`
