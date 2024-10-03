@@ -4,9 +4,8 @@ This directory contains a set of Jupyter notebooks that are designed to process 
 
 It's important to note that the notebooks in the `notebook` directory should be run in sequence as each notebook depends on the output of the previous one. Running them out of order may result in errors or unexpected behavior.
 
-We also provide the notebook to generate a simple synthetic datasets for testing purpose:
+We will soon also provide the notebook to generate a simple synthetic datasets for testing purpose:
 - 00-Generate Synthetic Data.ipynb 
-- 00-Generate Synthetic Data - Large.ipynb
 - 00-Generate CRM Data.ipynb
 
 and notebook tutorial for installing the local version of spark:
@@ -20,7 +19,7 @@ There are two notebooks which generates synthetic data that mimics the structure
 - Input: -
 - Output: `MPD_sample_synthetic.csv`
 
-## 00-Generate CRM Data.ipynb - coming soon (Optional)
+## 00-Generate CRM Data.ipynb (Optional)
 This notebook generates synthetic metadata to be used for indciator calculation, such as gender & age group.
 - Input: -
 - Output: `MPD_sample_synthetic_CRM.csv` & `MPD_sample_synthetic_zone.csv`
