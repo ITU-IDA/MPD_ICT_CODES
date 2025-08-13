@@ -4,7 +4,7 @@
 
 ## Launch a codespace for this repository
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Flowminder/MPD_ICT_CODES/tree/cb-codespaces?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Flowminder/MPD_ICT_CODES?quickstart=1)
 
 You will need to have an existing Github account, otherwise [create one](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) before proceeding.  
 Click the "Open in GitHub Codespaces" badge to create (or resume) a codespace in the default branch. This will launch an in-browser VS Code development environment, which may take a few minutes to configure on first setup.
