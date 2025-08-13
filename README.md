@@ -1,4 +1,4 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Flowminder/tree/cb-codespaces?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Flowminder/MPD_ICT_CODES/tree/cb-codespaces?quickstart=1)
 
 # Mobile Positioning Data for Estimating SDGs Indicator: Proportion of the Population Using the Internet
 This project aims to estimate the proportion of the population using the internet by leveraging mobile positioning data (MPD). The project consists of several notebooks that process raw MPD, provide quality assurance of MPD, determine home locations of subscribers, and calculate the proportion of the population using the internet.
