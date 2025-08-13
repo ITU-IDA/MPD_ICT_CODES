@@ -1,3 +1,5 @@
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/tree/cb-codespaces?quickstart=1)
+
 # Mobile Positioning Data for Estimating SDGs Indicator: Proportion of the Population Using the Internet
 This project aims to estimate the proportion of the population using the internet by leveraging mobile positioning data (MPD). The project consists of several notebooks that process raw MPD, provide quality assurance of MPD, determine home locations of subscribers, and calculate the proportion of the population using the internet.
 
@@ -10,7 +12,7 @@ The Jupyter Notebook series are written in PySpark and serves as a practical gui
 There are several Notebooks, each focused on one specific area of the data process. The Notebooks included are:
 
 ### 1. Setup instructions:
-Instructions on how to setup the technical environment to enable data processing using PySpark. There are instructions available both Windows, Linux/Mac and using SageMaker Studio Lab, an AWS cloud environment.
+Instructions on how to setup the technical environment to enable data processing using PySpark. There are instructions available both Windows, Linux/Mac, GitHub Codespaces, and using SageMaker Studio Lab, an AWS cloud environment.
    
 ### 2. Processing of raw mobile phone data:
 This Notebook elaborates on the structure necessary fields required for basic processing of mobile phone data. It also includes basic checks on the data, removing of duplicate records, and performing exploratory data analysis to check consistency and appropriateness of the data, filtering out irrelevant data (like robots or tourists), and ultimately preparing the data for further processing or analysis.
