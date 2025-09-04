@@ -56,7 +56,7 @@ The target audience for this project includes the International Telecommunicatio
 This project leverages MPD, Python, and Spark to process and analyze data.
 
 ## Installation
-To use this project, you'll need to have Python and Spark installed on your machine. You can then clone the repository from GitHub and run the notebooks in a Jupyter environment. Alt, [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ITU-IDA/MPD_ICT_CODES)
+To use this project, you'll need to have Python and Spark installed on your machine. You can then clone the repository from GitHub and run the notebooks in a Jupyter environment.
 
 ## Usage
 To use this project, follow these steps:
