@@ -1,24 +1,31 @@
-# Set a variable GEOJSON_FILE to the file path "../data/brazil_adm.json". Please custom this path based on your own adminstrative dataset.
-GEOJSON_FILE = "../data/brazil_adm.json"
-
 # Set number of core. * will takes all the available cores.
 CORE = "3"
 
 # Set Path where data files are located
 BASE_PATH = "../data/"
 
+# Input data:
+#######################################################
 # Set Input File name for raw data step - merged
-RAW_FILE_PATH = "MPD_sample_synthetic.csv"
+RAW_FILE_PATH = "MPD_sample_synthetic_kenya_3001subs.csv"
+
+# Define the path to the raw MPD subs records file - In case you have two files that need to be merged, add the files here: 
+RAW_SUBS_PATH = "MPD_sample_records.csv"
+
+# Define the path to the raw MPD cells file  - In case you have two files that need to be merged, add the files here: 
+RAW_CELLS_PATH = "MPD_sample_cells.csv"
+
+# Set a variable GEOJSON_FILE to the file path "../data/geoBoundaries-KEN-ADM3_simplified.geojson". Please custom this path based on your own adminstrative dataset.
+GEOJSON_FILE = "../data/geoBoundaries-KEN-ADM3_simplified.geojson"
+MUNICIPALITY_FIELD_NAME = 'shapeName'
 
 # Set configuration for sanity check
+#######################################################
 SANITY_PATH = "../data/01_RAW"
 SANITY_FILE_PATH = RAW_FILE_PATH.replace(".csv","_sanity.jsonl")
 
-# Define the path to the raw MPD subs records file
-RAW_SUBS_PATH = "MPD_sample_records.csv"
-
-# Define the path to the raw MPD cells file
-RAW_CELLS_PATH = "MPD_sample_cells.csv"
+# Set configuration for pre-processing
+#######################################################
 
 # Define a dictionary containing configuration parameters for filtering
 RAW_CONF = {"ROBOT_THRESHOLD": 500, "RANDOM_EVENT_THRESHOLD": 1, "TOURIST_THRESHOLD": 7}
@@ -28,6 +35,9 @@ FILTERED_FILE_PATH_PARQUET = "MPD_sample_synthetic_filtered"
 
 # Define the path to the filtered MPD file in CSV format
 FILTERED_FILE_PATH_CSV = "MPD_sample_synthetic_csv"
+
+# Set configuration for QA
+#######################################################
 
 # Set a variable QA_PATH to the directory path "../data/02_QA/"
 QA_PATH = "../data/02_QA/"
@@ -103,6 +113,9 @@ QA_action_plan = {
     "DIURNAL_DISTRIBUTION_REPORT": "Analyze the diurnal distribution patterns from CDR and IPDR data and investigate the reasons for the deviation from the expected elephant shape.\nThis may involve examining user behavior, network usage patterns, or potential issues with data format like incorrect timezone.\nTake appropriate actions to address any discrepancies and ensure accurate diurnal distribution reporting.\nSee attached image '7_diurnal_distribution_of_subscribers_activity.png' for the visualization.",
 }
 
+# Set configuration for anchoring
+#######################################################
+
 # Set a variable ANCHOR_PATH to the directory path "../data/03_Anchoring/"
 ANCHOR_PATH = "../data/03_Anchoring/"
 
@@ -114,8 +127,11 @@ ANCHOR_CONF = {
     "ANCHOR_3": [21, 24],
 }
 
+# Set configuration for indicator
+#######################################################
+
 INDICATOR_PATH = "../data/04_Indicator/"
 
-INDICATOR_ZONE_PATH = "MPD_sample_synthetic_zone.csv"
+INDICATOR_ZONE_PATH = "MPD_sample_synthetic_zone_kenya.csv"
 
-INDICATOR_CRM_PATH = "MPD_sample_synthetic_CRM.csv"
+INDICATOR_CRM_PATH = "MPD_sample_synthetic_CRM_kenya.csv"
