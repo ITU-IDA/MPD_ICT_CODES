@@ -7,7 +7,7 @@ BASE_PATH = "../data/"
 # Input data:
 #######################################################
 # Set Input File name for raw data step - merged
-RAW_FILE_PATH = "MPD_sample_synthetic_kenya_3001subs.csv"
+RAW_FILE_PATH = "MPD_sample_synthetic_kenya_6001subs.csv"
 
 # Define the path to the raw MPD subs records file - In case you have two files that need to be merged, add the files here: 
 RAW_SUBS_PATH = "MPD_sample_records.csv"
@@ -18,17 +18,24 @@ RAW_CELLS_PATH = "MPD_sample_cells.csv"
 # Set a variable GEOJSON_FILE to the file path "../data/geoBoundaries-KEN-ADM3_simplified.geojson". Please custom this path based on your own adminstrative dataset.
 GEOJSON_FILE = "../data/geoBoundaries-KEN-ADM3_simplified.geojson"
 MUNICIPALITY_FIELD_NAME = 'shapeName'
+MUNICIPALITY_MATCH_NAME = 'shapeID'
 
 # Set configuration for sanity check
 #######################################################
 SANITY_PATH = "../data/01_RAW"
 SANITY_FILE_PATH = RAW_FILE_PATH.replace(".csv","_sanity.jsonl")
 
+
+# Set a variable QA_PATH to the directory path "../data/00_HASH/"
+HASH_PATH = "../data/00_HASH/"
+HASH_FILE_INPUT = "MPD_hashing_example_input_kenya.csv"
+HASH_FILE_OUTPUT = "MPD_hashing_example_output_kenya.csv"
+
 # Set configuration for pre-processing
 #######################################################
 
 # Define a dictionary containing configuration parameters for filtering
-RAW_CONF = {"ROBOT_THRESHOLD": 500, "RANDOM_EVENT_THRESHOLD": 1, "TOURIST_THRESHOLD": 7}
+RAW_CONF = {"ROBOT_THRESHOLD": 300, "RANDOM_EVENT_THRESHOLD": 1, "TOURIST_EVENT_THRESHOLD": 7, "TOURIST_DAYS_THRESHOLD": 3, "TOURIST_DAYSROW_THRESHOLD": 3}
 
 # Define the path to the filtered MPD file in Parquet format
 FILTERED_FILE_PATH_PARQUET = "MPD_sample_synthetic_filtered"
