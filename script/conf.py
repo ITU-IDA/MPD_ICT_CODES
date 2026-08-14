@@ -7,7 +7,7 @@ BASE_PATH = "../data/"
 # Input data:
 #######################################################
 # Set Input File name for raw data step - merged
-RAW_FILE_PATH = "MPD_sample_synthetic_kenya_6001subs.csv"
+RAW_FILE_PATH = "MPD_synthetic_rwa_10000subs.csv.gz"
 
 # Define the path to the raw MPD subs records file - In case you have two files that need to be merged, add the files here: 
 RAW_SUBS_PATH = "MPD_sample_records.csv"
@@ -16,9 +16,10 @@ RAW_SUBS_PATH = "MPD_sample_records.csv"
 RAW_CELLS_PATH = "MPD_sample_cells.csv"
 
 # Set a variable GEOJSON_FILE to the file path "../data/geoBoundaries-KEN-ADM3_simplified.geojson". Please custom this path based on your own adminstrative dataset.
-GEOJSON_FILE = "../data/geoBoundaries-KEN-ADM3_simplified.geojson"
-MUNICIPALITY_FIELD_NAME = 'shapeName'
-MUNICIPALITY_MATCH_NAME = 'shapeID'
+GEOJSON_FILE = "../data/gadm41_RWA_2.json"
+MUNICIPALITY_FIELD_NAME = 'NAME_2'
+MUNICIPALITY_MATCH_NAME = 'GID_2'
+COUNTRY_CODE = 'rwa'
 
 # Set configuration for sanity check
 #######################################################
@@ -28,14 +29,14 @@ SANITY_FILE_PATH = RAW_FILE_PATH.replace(".csv","_sanity.jsonl")
 
 # Set a variable QA_PATH to the directory path "../data/00_HASH/"
 HASH_PATH = "../data/00_HASH/"
-HASH_FILE_INPUT = "MPD_hashing_example_input_kenya.csv"
-HASH_FILE_OUTPUT = "MPD_hashing_example_output_kenya.csv"
+HASH_FILE_INPUT = "MPD_hashing_example_input.csv"
+HASH_FILE_OUTPUT = "MPD_hashing_example_output.csv"
 
 # Set configuration for pre-processing
 #######################################################
 
 # Define a dictionary containing configuration parameters for filtering
-RAW_CONF = {"ROBOT_THRESHOLD": 300, "RANDOM_EVENT_THRESHOLD": 1, "TOURIST_EVENT_THRESHOLD": 7, "TOURIST_DAYS_THRESHOLD": 3, "TOURIST_DAYSROW_THRESHOLD": 3}
+RAW_CONF = {"ROBOT_THRESHOLD": 250, "RANDOM_EVENT_THRESHOLD": 1, "TOURIST_EVENT_THRESHOLD": 3, "TOURIST_DAYS_THRESHOLD": 7, "TOURIST_DAYSROW_THRESHOLD": 7}
 
 # Define the path to the filtered MPD file in Parquet format
 FILTERED_FILE_PATH_PARQUET = "MPD_sample_synthetic_filtered"
@@ -139,6 +140,45 @@ ANCHOR_CONF = {
 
 INDICATOR_PATH = "../data/04_Indicator/"
 
-INDICATOR_ZONE_PATH = "MPD_sample_synthetic_zone_kenya.csv"
+INDICATOR_ZONE_PATH = "MPD_synthetic_zone_rwa.csv"
 
-INDICATOR_CRM_PATH = "MPD_sample_synthetic_CRM_kenya.csv"
+INDICATOR_CRM_PATH = "MPD_synthetic_CRM_rwa.csv"
+
+
+# Post-adjustment parameters for indicator calibration.
+#######################################################
+# Values are expressed as percentages on a 0-100 scale.
+POST_ADJUSTMENT_PATH = "../data/05_Post_adjustment/"
+
+CHILDREN_PERC = 40 # Currently children ages 0-14 makes up about 40% of Rwanda's population
+NO_PHONE_PERC = 40 # ITU estimate of Mobile phone ownership 10+ is 51.5% in 2024, assuming 60% among ages 15+ in 2026
+SIMS_PER_INTERNET_USER = 1.1 # Used to correct internet-user over-representation in SIM/subscription based rates
+SIMS_PER_NON_INTERNET_USER = 1.0 # Used to correct non-internet-user over-representation in SIM/subscription based rates
+NON_MOBILE_PHONE_INTERNET_PERC = 20 # Share of adults without a mobile phone who are still assumed to use the internet
+
+# Optional operator configuration for notebook 05.
+# Leave empty to read one set of notebook 04 outputs from INDICATOR_PATH.
+# To read one operator from a different notebook 04 output folder, provide one entry.
+# To combine two or more operators, provide one notebook 04 output folder per operator.
+# If all market_share_perc values are omitted, notebook 05 uses equal weights.
+# If any market_share_perc value is provided, every operator must provide one.
+# Each indicator_path/indicator_dir value must point to a notebook 04 output folder,
+# not to an individual CSV file.
+# Example:
+# OPERATOR_CONFIGS = [
+#     {
+#         "name": "operator_1",
+#         "indicator_path": "../data/04_Indicator_operator_1",
+#         "market_share_perc": 45,
+#         "sims_per_internet_user": 1.1,
+#         "sims_per_non_internet_user": 1.0,
+#     },
+#     {
+#         "name": "operator_2",
+#         "indicator_dir": "../data/04_Indicator_operator_2",
+#         "market_share_perc": 55,
+#         "sims_per_internet_user": 1.2,
+#         "sims_per_non_internet_user": 1.0,
+#     },
+# ]
+OPERATOR_CONFIGS = []
