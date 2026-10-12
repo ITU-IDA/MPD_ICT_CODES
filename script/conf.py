@@ -17,18 +17,20 @@ RAW_CELLS_PATH = "MPD_sample_cells.csv"
 
 # Set a variable GEOJSON_FILE to the file path "../data/geoBoundaries-KEN-ADM3_simplified.geojson". Please custom this path based on your own adminstrative dataset.
 GEOJSON_FILE = "../data/gadm41_RWA_2.json"
-MUNICIPALITY_FIELD_NAME = 'NAME_2'
-MUNICIPALITY_MATCH_NAME = 'GID_2'
+AREA_FIELD_NAME = 'NAME_2'
+AREA_MATCH_NAME = 'GIS_2'
 COUNTRY_CODE = 'rwa'
 
 # Set configuration for sanity check
 #######################################################
-SANITY_PATH = "../data/01_RAW"
-SANITY_FILE_PATH = RAW_FILE_PATH.replace(".csv","_sanity.jsonl")
+RAW_PATH = BASE_PATH + "01_RAW/"
+SANITY_PATH = RAW_PATH.rstrip("/")
+SANITY_FILE_INPUT = "MPD_sample_synthetic_sanity_check.csv"
+SANITY_FILE_PATH = SANITY_FILE_INPUT.replace(".csv","_sanity.jsonl")
 
 
-# Set a variable QA_PATH to the directory path "../data/00_HASH/"
-HASH_PATH = "../data/00_HASH/"
+# Set a variable HASH_PATH to the directory path "../data/00_HASH/"
+HASH_PATH = BASE_PATH + "00_HASH/"
 HASH_FILE_INPUT = "MPD_hashing_example_input.csv"
 HASH_FILE_OUTPUT = "MPD_hashing_example_output.csv"
 
@@ -39,19 +41,19 @@ HASH_FILE_OUTPUT = "MPD_hashing_example_output.csv"
 RAW_CONF = {"ROBOT_THRESHOLD": 250, "RANDOM_EVENT_THRESHOLD": 1, "TOURIST_EVENT_THRESHOLD": 3, "TOURIST_DAYS_THRESHOLD": 7, "TOURIST_DAYSROW_THRESHOLD": 7}
 
 # Define the path to the filtered MPD file in Parquet format
-FILTERED_FILE_PATH_PARQUET = "MPD_sample_synthetic_filtered"
+FILTERED_FILE_PATH_PARQUET = RAW_PATH + "MPD_sample_synthetic_filtered"
 
 # Define the path to the filtered MPD file in CSV format
-FILTERED_FILE_PATH_CSV = "MPD_sample_synthetic_csv"
+FILTERED_FILE_PATH_CSV = RAW_PATH + "MPD_sample_synthetic_csv"
 
 # Set configuration for QA
 #######################################################
 
 # Set a variable QA_PATH to the directory path "../data/02_QA/"
-QA_PATH = "../data/02_QA/"
+QA_PATH = BASE_PATH + "02_QA/"
 
 # Set Input File name for QA step
-QA_FILE_PATH = "MPD_sample_synthetic_filtered"
+QA_FILE_PATH = FILTERED_FILE_PATH_PARQUET
 
 # define expected distribution with elephant shape. Reference: https://proceedings.stis.ac.id/icdsos/article/view/134
 # It's important to note that the diurnal distribution given here is based on general behavior patterns observed in Indonesia.
@@ -125,7 +127,7 @@ QA_action_plan = {
 #######################################################
 
 # Set a variable ANCHOR_PATH to the directory path "../data/03_Anchoring/"
-ANCHOR_PATH = "../data/03_Anchoring/"
+ANCHOR_PATH = BASE_PATH + "03_Anchoring/"
 
 # Initialize the CONF dictionary for setting hour reference for anchoring process
 ANCHOR_CONF = {
@@ -138,7 +140,7 @@ ANCHOR_CONF = {
 # Set configuration for indicator
 #######################################################
 
-INDICATOR_PATH = "../data/04_Indicator/"
+INDICATOR_PATH = BASE_PATH + "04_Indicator/"
 
 INDICATOR_ZONE_PATH = "MPD_synthetic_zone_rwa.csv"
 
@@ -148,13 +150,13 @@ INDICATOR_CRM_PATH = "MPD_synthetic_CRM_rwa.csv"
 # Post-adjustment parameters for indicator calibration.
 #######################################################
 # Values are expressed as percentages on a 0-100 scale.
-POST_ADJUSTMENT_PATH = "../data/05_Post_adjustment/"
+POST_ADJUSTMENT_PATH = BASE_PATH + "05_Post_adjustment/"
 
 CHILDREN_PERC = 40 # Currently children ages 0-14 makes up about 40% of Rwanda's population
-NO_PHONE_PERC = 40 # ITU estimate of Mobile phone ownership 10+ is 51.5% in 2024, assuming 60% among ages 15+ in 2026
+NO_PHONE_PERC = 40 # ITU estimate of Mobile phone ownership 10+ is 52% in 2024, assuming 60% among ages 15+ in 2026
 SIMS_PER_INTERNET_USER = 1.1 # Used to correct internet-user over-representation in SIM/subscription based rates
 SIMS_PER_NON_INTERNET_USER = 1.0 # Used to correct non-internet-user over-representation in SIM/subscription based rates
-NON_MOBILE_PHONE_INTERNET_PERC = 20 # Share of adults without a mobile phone who are still assumed to use the internet
+NON_MOBILE_PHONE_INTERNET_PERC = 15 # Share of adults without a mobile phone who are still assumed to use the internet
 
 # Optional operator configuration for notebook 05.
 # Leave empty to read one set of notebook 04 outputs from INDICATOR_PATH.
